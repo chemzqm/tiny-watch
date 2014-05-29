@@ -6,6 +6,12 @@ Start livereload server and watch for specified file changes.
 * timestamp
 * glob files
 
+## Install
+
+    npm install tiny-watch
+
+## Usage
+
 ```
   Usage: tiny-watch tiny-watch *.js *.html *.css *.php
 
