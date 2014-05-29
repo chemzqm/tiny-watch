@@ -11,6 +11,7 @@
     "type": "git",
     "url": "git@github.com:chemzqm/tiny-watch"
   },
+  "preferGlobal": true,
   "keywords": [
     "tiny-lr"
   ],
