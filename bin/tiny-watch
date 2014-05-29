@@ -1,0 +1,45 @@
+#! /usr/bin/env node
+
+var program = require('commander');
+var tinylr = require('tiny-lr');
+var watch = require('../');
+var growl = require('growl');
+
+program
+  .version('0.0.1')
+  .usage('tiny-watch *.js *.html *.css *.php')
+  .description('start tiny-lr server and watch for file changes')
+  .parse(process.argv);
+
+if (!program.args || !program.args.length) return console.log('pass glob files as options');
+
+
+var server = new tinylr();
+var port = 35729;
+server.listen(port, function (err) {
+  if (err) throw err;
+  console.log('starting livereload server on ' + port);
+  watch(program.args, function (file) {
+    growl('Changed file: ' + file + ' reloading...', {
+      image: 'Safari',
+      title: 'liveload'
+    })
+    console.log(format(new Date()) + ' - ' + file);
+    server.changed({
+      body: {
+        files: file
+      }
+    })
+  });
+})
+
+function format(t) {
+  var h = t.getHours();
+  if (h < 10) h = '0' + h;
+  var m = t.getMinutes();
+  if (m < 10) m = '0' + m;
+  var s = t.getSeconds();
+  if (s < 10) s = '0' + s;
+  return h + ':' + m + ':' + s;
+}
+

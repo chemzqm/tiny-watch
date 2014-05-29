@@ -1,0 +1,30 @@
+{
+  "name": "tiny-watch",
+  "version": "0.0.1",
+  "description": "start tiny-lr server and watch file changes",
+  "main": "index.js",
+  "bin": "bin/tiny-watch",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:chemzqm/tiny-watch"
+  },
+  "keywords": [
+    "tiny-lr"
+  ],
+  "author": "chemzqm@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chemzqm/tiny-watch/issues"
+  },
+  "homepage": "https://github.com/chemzqm/tiny-watch",
+  "dependencies": {
+    "commander": "^2.2.0",
+    "glob": "^4.0.0",
+    "growl": "^1.7.0",
+    "tiny-lr": "0.0.7",
+    "win-spawn": "^2.0.0"
+  }
+}
