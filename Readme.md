@@ -14,7 +14,7 @@ Start livereload server and watch for specified file changes.
 ## Usage
 
 ```
-  Usage: tiny-watch tiny-watch *.js *.html *.css *.php
+  Usage: tiny-watch *.js *.html *.css *.php
 
   Options:
 
